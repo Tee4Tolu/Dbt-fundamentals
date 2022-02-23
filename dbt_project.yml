@@ -38,4 +38,6 @@ models:
           +materialized: table
       Staging:
         +materialized: view
+      Stripe:
+        +materialized: view
     

@@ -5,10 +5,12 @@ orders as (
     select * from {{ref('stg_orders')}}
 ),
 customer_orders as (
-        select customer_id,
+    select 
+        customer_id,
         min(order_date) as first_order_date,
         max(order_date) as recent_order_date,
         count(order_id) as Total_orders
+    
     from orders
     group by 1
 ),
