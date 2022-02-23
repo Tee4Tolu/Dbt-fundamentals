@@ -1,27 +1,9 @@
-{{
-    config(
-        materialized = "table"
-    
-)}}
-
-
-with customers as 
-    (
-        select id as customer_id,
-        first_name,
-        last_name
-    from `dbt-tutorial.jaffle_shop.customers`
-    ),
-
+with customers as (
+    select * from {{ref('stg_customers')}}
+),
 orders as (
-        select id as order_id,
-        USER_ID as customer_id,
-        order_date,
-        status
-    from `dbt-tutorial.jaffle_shop.orders`
-        
-    ),
-
+    select * from {{ref('stg_orders')}}
+),
 customer_orders as (
         select customer_id,
         min(order_date) as first_order_date,
