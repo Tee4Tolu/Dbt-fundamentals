@@ -1,8 +1,5 @@
- {{config(
-     materialized= "table"
- )}}
  
- with orders as  
+ with fct_orders as  
     (with orders as (
         select * from {{ ref('stg_orders' )}}
     ),
@@ -31,4 +28,4 @@
     on order_payments.orderid = orders.order_id
     )
     select * from final)
-select * from orders
+select * from fct_orders
