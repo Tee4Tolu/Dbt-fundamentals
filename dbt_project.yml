@@ -37,7 +37,6 @@ models:
         Core:
           +materialized: table
       Staging:
-        +materialized: view
+        +materialized: table
       Stripe:
-        +materialized: view
-    
+        +materialized: table
