@@ -37,6 +37,5 @@ models:
         Core:
           +materialized: table
       Staging:
-        Jaffle_Shop:
-          +materialized: view
+        +materialized: table
       
