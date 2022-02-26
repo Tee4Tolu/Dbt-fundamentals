@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: jaffle_shop
-    database: 
+    database: dbt-tutorial
     schema: Jaffle_Shop
     tables: 
       - name: customers
